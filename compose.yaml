@@ -1,20 +1,9 @@
 services:
-  postgres:
+  blog_postgres:
     image: postgres
-    container_name: meu_blog_postgres
     environment:
-      POSTGRES_USER: dry
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: blog_2024
+      POSTGRES_USER: dry                # Nome do usuário
+      POSTGRES_PASSWORD: root            # Senha do usuário
+      POSTGRES_DB: db_blog_2024         # Nome do banco de dados que será criado
     ports:
-      - "5433:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - minha_rede
-
-volumes:
-  postgres_data:
-
-networks:
-  minha_rede:
+      - "5432:5432"
